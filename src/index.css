@@ -1,0 +1,247 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased;
+    background-color: #FAF9EE;
+    background-image: linear-gradient(#E8E6D9 1px, transparent 1px), linear-gradient(90deg, #E8E6D9 1px, transparent 1px);
+    background-size: 30px 30px;
+    color: #111111;
+  }
+}
+
+@layer utilities {
+    .paper-texture {
+        background-color: #f7fce7;
+        background-image: radial-gradient(#c2caaf 1px, transparent 1px);
+        background-size: 20px 20px;
+    }
+    .polaroid-frame {
+        background: white;
+        padding: 12px 12px 48px 12px;
+        box-shadow: 4px 4px 0px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+    .polaroid-frame:hover {
+        transform: rotate(0deg) scale(1.05) !important;
+        box-shadow: 8px 8px 0px rgba(0,0,0,0.15);
+        z-index: 20;
+    }
+    .scrapbook-border {
+        border: 2px dashed #727a63;
+    }
+    .wavy-underline {
+        text-decoration-line: underline;
+        text-decoration-style: wavy;
+        text-decoration-color: #b8ff3b;
+    }
+    .highlighter {
+        background: linear-gradient(180deg, transparent 60%, #b8ff3b 0);
+    }
+    
+    .floating-polaroid-1 {
+        animation: float-anim-1 6s ease-in-out infinite;
+    }
+    .floating-polaroid-2 {
+        animation: float-anim-2 5s ease-in-out infinite;
+        animation-delay: 1.5s;
+    }
+    .floating-polaroid-3 {
+        animation: float-anim-1 5.5s ease-in-out infinite;
+        animation-delay: 0.5s;
+    }
+    .floating-polaroid-4 {
+        animation: float-anim-2 6.5s ease-in-out infinite;
+        animation-delay: 2.5s;
+    }
+    .floating-sticker-1 {
+        animation: float-anim-3 4s ease-in-out infinite;
+    }
+    .floating-sticker-2 {
+        animation: float-anim-4 5s ease-in-out infinite;
+        animation-delay: 1s;
+    }
+    .floating-sticker-3 {
+        animation: float-anim-3 4.5s ease-in-out infinite;
+        animation-delay: 2s;
+    }
+}
+
+@keyframes float-anim-1 {
+    0%, 100% { transform: translateY(0px) rotate(12deg); }
+    50% { transform: translateY(-15px) rotate(10deg); }
+}
+@keyframes float-anim-2 {
+    0%, 100% { transform: translateY(0px) rotate(-6deg); }
+    50% { transform: translateY(-12px) rotate(-8deg); }
+}
+@keyframes float-anim-3 {
+    0%, 100% { transform: translateY(0px) rotate(3deg); }
+    50% { transform: translateY(-8px) rotate(5deg); }
+}
+@keyframes float-anim-4 {
+    0%, 100% { transform: translateY(0px) rotate(-2deg); }
+    50% { transform: translateY(-10px) rotate(-4deg); }
+}
+
+/* Global Hover Effect System */
+
+/* Polaroid Lift */
+.hover-polaroid-lift {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.hover-polaroid-lift:hover {
+    transform: translateY(-8px) rotate(1deg) !important;
+    box-shadow: 12px 12px 0px rgba(0,0,0,0.2) !important;
+    z-index: 20;
+}
+
+/* Sticker Peel */
+.hover-sticker-peel {
+    position: relative;
+    transition: all 0.3s ease;
+}
+.hover-sticker-peel::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 0; height: 0;
+    background: linear-gradient(225deg, transparent 45%, rgba(0,0,0,0.1) 50%, #ffffff 50%);
+    transition: all 0.3s ease;
+    border-bottom-left-radius: 4px;
+}
+.hover-sticker-peel:hover {
+    transform: scale(1.05) rotate(-2deg) !important;
+    box-shadow: -4px 6px 10px rgba(0,0,0,0.15) !important;
+}
+.hover-sticker-peel:hover::after {
+    width: 15px;
+    height: 15px;
+}
+
+/* Notebook Page Turn */
+.hover-notebook-turn {
+    position: relative;
+    transition: all 0.4s ease;
+}
+.hover-notebook-turn::after {
+    content: '';
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 0; height: 0;
+    background: linear-gradient(135deg, transparent 45%, rgba(0,0,0,0.1) 50%, #ffffff 50%);
+    box-shadow: -2px -2px 5px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+}
+.hover-notebook-turn:hover {
+    transform: perspective(800px) rotateX(2deg) rotateY(-2deg);
+}
+.hover-notebook-turn:hover::after {
+    width: 30px;
+    height: 30px;
+}
+
+/* Marker Highlight */
+.hover-marker-highlight {
+    background: linear-gradient(180deg, transparent 60%, #b8ff3b 0);
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    background-position: left center;
+    transition: background-size 0.4s ease;
+}
+.hover-marker-highlight:hover {
+    background-size: 100% 100%;
+}
+
+/* Stamp Press */
+.hover-stamp-press {
+    transition: all 0.15s ease;
+}
+.hover-stamp-press:hover {
+    transform: scale(0.96) translateY(2px) !important;
+    box-shadow: 2px 2px 0px rgba(0,0,0,1) !important;
+}
+
+/* Sticky Bounce */
+.hover-sticky-bounce {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.hover-sticky-bounce:hover {
+    transform: scale(1.08) rotate(4deg) !important;
+}
+
+/* Ink Spread */
+.hover-ink-spread {
+    position: relative;
+    text-decoration: none !important;
+}
+.hover-ink-spread::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -2px;
+    left: 0;
+    background-color: #111111;
+    transition: width 0.3s ease;
+}
+.hover-ink-spread:hover::after {
+    width: 100%;
+}
+
+/* Polaroid Shake */
+@keyframes shake-wobble {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(2deg); }
+    50% { transform: rotate(-2deg); }
+    75% { transform: rotate(1deg); }
+    100% { transform: rotate(0deg); }
+}
+.hover-polaroid-shake:hover {
+    animation: shake-wobble 0.4s ease-in-out;
+}
+
+/* Terminal Cursor */
+@keyframes blink-cursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+.hover-terminal-cursor:hover::after {
+    content: '█';
+    animation: blink-cursor 1s step-end infinite;
+    color: #00ff00;
+    margin-left: 4px;
+}
+
+/* SVG Desk Object Animations */
+.svg-laptop-screen { transition: fill 0.3s ease, filter 0.3s ease; }
+.group:hover .svg-laptop-screen { fill: #B8FF3B; filter: drop-shadow(0 0 6px rgba(184,255,59,0.8)); }
+
+@keyframes lens-reflect {
+  0%, 100% { transform: translate(0,0); }
+  50% { transform: translate(3px, -3px); }
+}
+.group:hover .svg-camera-reflection { animation: lens-reflect 2s ease-in-out infinite; }
+
+.svg-notebook-page { transition: transform 0.4s ease; transform-origin: left center; }
+.group:hover .svg-notebook-page { transform: rotateY(-25deg) skewY(-5deg); }
+
+@keyframes soundwave {
+  0%, 100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+}
+.svg-soundwave { transform-origin: bottom; }
+.group:hover .svg-soundwave-1 { animation: soundwave 0.8s infinite ease-in-out; }
+.group:hover .svg-soundwave-2 { animation: soundwave 0.8s infinite ease-in-out 0.2s; }
+.group:hover .svg-soundwave-3 { animation: soundwave 0.8s infinite ease-in-out 0.4s; }
+
+@keyframes robot-blink {
+  0%, 90%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+.svg-robot-eye { transform-origin: center; }
+.group:hover .svg-robot-eye { animation: robot-blink 3s infinite; }
+
+
