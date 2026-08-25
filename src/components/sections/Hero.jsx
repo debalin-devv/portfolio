@@ -1,175 +1,203 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Mail, ArrowRight, Code } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section id="hero" className="relative min-h-[90vh] pt-24 pb-0 flex flex-col md:block">
-      {/* Background Doodles (Absolute) */}
-      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-        {/* Top Left Doodle */}
-        <svg className="absolute top-32 right-1/2 translate-x-32 w-16 h-16 text-[#111111]" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-          <path d="M10,90 Q40,10 90,50" />
-          <path d="M70,40 L90,50 L80,70" />
-          <path d="M20,20 L30,30" />
-          <path d="M40,10 L45,25" />
-        </svg>
-        {/* Top Right Circle Doodle */}
-        <svg className="absolute top-24 right-12 w-24 h-24 text-[#111111] opacity-60" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 4">
-          <circle cx="50" cy="50" r="40" />
-          <path d="M10,90 L90,10" strokeDasharray="none" />
-        </svg>
-        {/* Mid Star */}
-        <svg className="absolute top-1/2 left-1/3 w-10 h-10 text-[#111111]" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M50,10 L60,40 L90,50 L60,60 L50,90 L40,60 L10,50 L40,40 Z" />
-        </svg>
-        {/* Right Arrow Curve */}
-        <svg className="absolute top-1/2 right-[25%] w-20 h-32 text-[#111111]" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-          <path d="M10,10 C80,20 90,80 50,90" />
-          <path d="M40,75 L50,90 L70,80" />
-        </svg>
-        {/* Bottom Right Dashed Arrow */}
-        <svg className="absolute bottom-32 right-24 w-20 h-20 text-[#111111]" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeDasharray="4 4">
-          <path d="M10,90 Q50,90 90,10" />
-          <path d="M70,10 L90,10 L90,30" strokeDasharray="none" />
-        </svg>
-      </div>
+    <section id="hero" className="relative pt-6 pb-12 md:py-12 overflow-visible">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center max-w-[1280px] mx-auto">
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start relative z-10 w-full">
-        
-        {/* LEFT COLUMN: Content (Cols 1-5) */}
-        <div className="lg:col-span-5 space-y-8 relative z-20 md:pt-16">
-          <motion.div 
+        {/* LEFT COLUMN: Content (~55% width on desktop -> 7 cols) */}
+        <div className="lg:col-span-7 space-y-6 md:space-y-7 z-10">
+
+          {/* Top Badges */}
+          <div className="flex flex-wrap items-center gap-3">
+            {/* Hello Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="inline-flex items-center gap-2 bg-white border-[2.5px] border-black px-4 py-2 rounded-xl shadow-[3px_3px_0px_#000000]"
+            >
+              <span className="text-base">👋</span>
+              <span className="font-extrabold text-sm md:text-base text-black">
+                Hello, I'm Debalin Sinha
+              </span>
+            </motion.div>
+
+            {/* Status Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="inline-flex items-center gap-2 bg-white/90 border-[2.5px] border-black px-4 py-2 rounded-xl shadow-[3px_3px_0px_#000000]"
+            >
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500 border border-black"></span>
+              </span>
+              <span className="font-extrabold text-sm md:text-base text-black">
+                Currently open to ML Internships
+              </span>
+            </motion.div>
+          </div>
+
+          {/* Headline */}
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 bg-[#F3E8FF] border-2 border-[#111111] px-4 py-1.5 rounded-full shadow-[2px_2px_0px_rgba(17,17,17,1)]"
+            transition={{ delay: 0.15 }}
+            className="space-y-3"
           >
-            <span className="text-sm">👋</span>
-            <span className="font-label-caps text-xs font-bold text-[#111111]">Hello, I'm Debalin Sinha</span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] leading-[1.08] font-black text-black tracking-tight">
+              Building with
+            </h1>
+
+            {/* Lime Highlight Box */}
+            <div className="inline-block bg-[#B5F547] border-[3px] border-black rounded-2xl p-4 sm:p-6 md:p-7 shadow-[6px_6px_0px_#000000] max-w-full">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.05] font-black text-black tracking-tight whitespace-pre-line">
+                Code, Data &{'\n'}AI
+              </h2>
+            </div>
           </motion.div>
-          
-          <motion.h1 
+
+          {/* Intro Description */}
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-[5.5rem] leading-[1.1] text-[#111111] font-extrabold tracking-tight"
+            transition={{ delay: 0.25 }}
+            className="text-base sm:text-lg md:text-xl text-black font-medium max-w-2xl leading-relaxed"
           >
-            Building with <br/>
-            <span className="inline-block relative bg-[#B8FF3B] border-2 border-[#111111] px-3 shadow-[4px_4px_0px_rgba(17,17,17,1)] mt-2">
-              <span className="inline-block bg-black/10 border border-[#111111] px-1 mr-1 shadow-[1px_1px_0px_rgba(17,17,17,1)]">C</span>ode,
-            </span> 
-            <span className="inline-block bg-[#F3E8FF] border-2 border-[#111111] px-3 shadow-[4px_4px_0px_rgba(17,17,17,1)] ml-2 -rotate-2">AI</span> &amp; <br/>
-            <span className="inline-block bg-[#B8FF3B] border-2 border-[#111111] px-3 shadow-[4px_4px_0px_rgba(17,17,17,1)] rotate-1 mt-3">Creativity</span>
-          </motion.h1>
-          
-          <motion.div 
+            Combining computer science, AI/ML expertise, and data analysis to create innovative, practical solutions. Always learning, building, and pushing boundaries in artificial intelligence and software development.
+          </motion.p>
+
+          {/* CTA Buttons */}
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="font-body-lg text-lg text-[#111111] max-w-md leading-relaxed font-medium relative"
+            transition={{ delay: 0.35 }}
+            className="flex flex-wrap items-center gap-4 pt-2"
           >
-            Computer Science student specializing in AI &amp; ML.<br />
-            Passionate about building practical software, <span className="relative inline-block z-10">AI-powered tools<svg className="absolute -bottom-2 left-0 w-full h-3 text-[#A855F7] z-[-1]" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0,5 Q50,10 100,5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg></span>, and creative digital experiences.
-          </motion.div>
-          
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="flex flex-wrap gap-4 pt-4"
-          >
-            <a className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#B8FF3B] border-2 border-[#111111] text-[#111111] font-bold font-label-caps uppercase text-sm shadow-[4px_4px_0px_rgba(17,17,17,1)] transition-all hover:-translate-y-[2px] hover:shadow-[6px_6px_0px_rgba(17,17,17,1)] rounded-sm" href="#projects">
-              View My Work <span className="text-lg">↗</span>
+            {/* Get in Touch Button */}
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2.5 bg-[#B5F547] hover:bg-[#A5EA36] text-black font-extrabold text-lg px-7 py-3.5 rounded-xl border-[2.5px] border-black shadow-[4px_4px_0px_#000000] brutal-btn"
+            >
+              Get in Touch <Mail size={20} className="stroke-[2.5]" />
             </a>
-            <a className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white border-2 border-[#111111] text-[#111111] font-bold font-label-caps uppercase text-sm transition-all hover:bg-gray-50 rounded-sm" href="#">
-              Download Resume <span className="text-lg">↓</span>
+
+            {/* View Experience Button */}
+            <a
+              href="#experience"
+              className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-black font-extrabold text-lg px-7 py-3.5 rounded-xl border-[2.5px] border-black shadow-[4px_4px_0px_#000000] brutal-btn"
+            >
+              View Experience
             </a>
-          </motion.div>
-          
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="pt-6 flex items-center gap-2 text-[#111111]"
-          >
-            <span className="material-symbols-outlined text-[20px]">location_on</span>
-            <span className="font-body-md text-sm font-bold">Kolkata, West Bengal, India</span>
           </motion.div>
         </div>
 
-        {/* RIGHT COLUMN: Visuals & Scrapbook (Cols 6-12) */}
-        <div className="lg:col-span-7 relative w-full h-[550px] md:h-[600px] flex justify-center lg:justify-center">
+        {/* RIGHT COLUMN: Polaroid Photo Collage (~45% width on desktop -> 5 cols) */}
+        <div className="lg:col-span-5 relative min-h-[460px] sm:min-h-[520px] md:min-h-[560px] w-full flex items-center justify-center pt-6 lg:pt-0">
 
-          {/* Doodles */}
-          <svg className="absolute top-1/4 right-1/4 w-8 h-8 text-[#f7df1e] z-10 rotate-12 hidden lg:block" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M50,10 L60,40 L90,50 L60,60 L50,90 L40,60 L10,50 L40,40 Z" />
-          </svg>
+          {/* Container holding the physical overlapping Polaroids */}
+          <div className="relative w-full max-w-[480px] h-[520px] mx-auto">
 
-          {/* Focal Area: Portrait (Positioned slightly right and down) */}
-          <div className="absolute top-12 lg:top-24 left-1/2 lg:left-[55%] xl:left-[60%] -translate-x-1/2 flex flex-col items-center z-20">
-            
-            {/* Floating Stickers */}
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
+            {/* 1. Top-Left Polaroid: Hackathon Winner '25 */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, rotate: -10 }}
+              animate={{ opacity: 1, scale: 1, rotate: -5 }}
+              transition={{ delay: 0.2 }}
+              className="absolute top-2 left-0 sm:left-2 w-[185px] sm:w-[210px] bg-white border-[2.5px] border-black p-2.5 pb-7 rounded-md shadow-[5px_5px_0px_#000000] z-20 hover:z-40 transition-all duration-300 hover:scale-105 hover:rotate-0 cursor-pointer"
+            >
+              <div className="w-full aspect-[4/3] bg-gray-100 border border-black/20 overflow-hidden mb-2">
+                <img
+                  src="/polaroids/hackethon_prize.png"
+                  alt="Hackathon Winner 2023"
+                  className="w-full h-full object-cover"
+                  onError={(e) => { e.target.src = '/profile.jpeg'; }}
+                />
+              </div>
+              <p className="font-handwriting text-xl sm:text-2xl text-center text-black font-bold -rotate-1">
+                Hackathon Winner '25
+              </p>
+            </motion.div>
+
+            {/* 2. Top-Right Floating Label: Python & ML Developer */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, rotate: 10 }}
+              animate={{ opacity: 1, scale: 1, rotate: 6 }}
+              transition={{ delay: 0.3 }}
+              className="absolute top-0 right-2 sm:right-4 bg-white border-[2.5px] border-black px-3.5 py-2 rounded-xl shadow-[4px_4px_0px_#000000] z-30 flex items-center gap-2.5 hover:rotate-0 transition-transform cursor-pointer"
+            >
+              <div className="bg-[#B5F547] p-1.5 rounded-lg border border-black">
+                <Code size={18} className="stroke-[2.5]" />
+              </div>
+              <div className="text-xs sm:text-sm font-black leading-tight text-black">
+                Python & ML<br />Developer
+              </div>
+            </motion.div>
+
+            {/* 3. Middle-Right Polaroid: ML Model Training + View Project Sticker */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, rotate: 8 }}
+              animate={{ opacity: 1, scale: 1, rotate: 3 }}
               transition={{ delay: 0.4 }}
-              className="absolute -top-6 -left-16 md:-left-24 bg-[#B8FF3B] border-2 border-[#111111] px-3 py-1.5 shadow-[3px_3px_0px_rgba(17,17,17,1)] font-label-caps text-xs font-bold uppercase rounded-sm -rotate-6 z-30 flex items-center gap-2 hover:-translate-y-1 hover:rotate-0 transition-transform cursor-pointer"
+              className="absolute top-28 right-0 sm:right-2 w-[190px] sm:w-[215px] bg-white border-[2.5px] border-black p-2.5 pb-8 rounded-md shadow-[5px_5px_0px_#000000] z-25 hover:z-40 transition-all duration-300 hover:scale-105 hover:rotate-0 cursor-pointer"
             >
-              <span>🤖</span> AI &amp; ML Student
+              <div className="w-full aspect-[4/3] bg-gray-200/70 border border-black/20 overflow-hidden mb-2">
+              </div>
+              <p className="font-handwriting text-xl sm:text-2xl text-center text-black font-bold">
+                ML Model Training
+              </p>
+
+              {/* Overlapping Lime "View Project" Pill Sticker */}
+              <a
+                href="#projects"
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-[#B5F547] hover:bg-[#A5EA36] border-2 border-black px-3.5 py-1 rounded-full text-xs font-black text-black shadow-[2px_2px_0px_#000000] whitespace-nowrap transition-transform hover:scale-105"
+              >
+                View Project
+              </a>
             </motion.div>
 
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
+            {/* 4. Bottom-Left Polaroid: Tech Con '24 */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, rotate: -8 }}
+              animate={{ opacity: 1, scale: 1, rotate: -6 }}
               transition={{ delay: 0.5 }}
-              className="absolute top-1/3 -left-20 md:-left-32 bg-[#F3E8FF] border-2 border-[#111111] px-3 py-1.5 shadow-[3px_3px_0px_rgba(17,17,17,1)] font-label-caps text-xs font-bold uppercase rounded-sm rotate-2 z-30 flex items-center gap-1 hover:-translate-y-1 hover:-rotate-2 transition-transform cursor-pointer"
+              className="absolute bottom-12 left-0 sm:left-4 w-[175px] sm:w-[200px] bg-white border-[2.5px] border-black p-2.5 pb-7 rounded-md shadow-[5px_5px_0px_#000000] z-15 hover:z-40 transition-all duration-300 hover:scale-105 hover:rotate-0 cursor-pointer"
             >
-              <span className="text-orange-500">⚡</span> Python Developer
+              <div className="w-full aspect-[4/3] bg-gray-100 border border-black/20 overflow-hidden mb-2">
+                <img
+                  src="/polaroids/tech_xpo.jpg"
+                  alt="Tech Con 24"
+                  className="w-full h-full object-cover"
+                  onError={(e) => { e.target.src = '/profile.jpeg'; }}
+                />
+              </div>
+              <p className="font-handwriting text-xl sm:text-2xl text-center text-black font-bold rotate-1">
+                Tech Xpo '25
+              </p>
             </motion.div>
 
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.55 }}
-              className="absolute bottom-16 -left-12 md:-left-24 bg-white border-2 border-[#111111] px-3 py-1.5 shadow-[3px_3px_0px_rgba(17,17,17,1)] font-label-caps text-xs font-bold uppercase rounded-sm -rotate-3 z-30 flex items-center gap-1 hover:-translate-y-1 hover:rotate-1 transition-transform cursor-pointer"
-            >
-              <span>💻</span> C / C++ Programmer
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
+            {/* 5. Bottom-Right Polaroid: Team Collaboration */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, rotate: 6 }}
+              animate={{ opacity: 1, scale: 1, rotate: 4 }}
               transition={{ delay: 0.6 }}
-              className="absolute bottom-24 -right-8 md:-right-16 bg-[#FFFDF7] border-2 border-[#111111] px-3 py-1.5 shadow-[3px_3px_0px_rgba(17,17,17,1)] font-label-caps text-xs font-bold uppercase rounded-sm rotate-3 z-30 flex items-center gap-1 hover:-translate-y-1 hover:-rotate-1 transition-transform cursor-pointer"
+              className="absolute bottom-2 right-4 sm:right-10 w-[185px] sm:w-[210px] bg-white border-[2.5px] border-black p-2.5 pb-7 rounded-md shadow-[5px_5px_0px_#000000] z-20 hover:z-40 transition-all duration-300 hover:scale-105 hover:rotate-0 cursor-pointer"
             >
-              <span>💡</span> Prompt Engineer
+              <div className="w-full aspect-[4/3] bg-gray-100 border border-black/20 overflow-hidden mb-2">
+                <img
+                  src="/polaroids/hackethon_pic 1.jpg"
+                  alt="Team Collaboration"
+                  className="w-full h-full object-cover"
+                  onError={(e) => { e.target.src = '/profile.jpeg'; }}
+                />
+              </div>
+              <p className="font-handwriting text-xl sm:text-2xl text-center text-black font-bold -rotate-1">
+                Team Collaboration
+              </p>
             </motion.div>
 
-            {/* Premium Polaroid Frame (Centerpiece) */}
-            <motion.div 
-              initial={{ opacity: 0, y: 30, rotate: 0 }}
-              animate={{ opacity: 1, y: 0, rotate: 2 }}
-              className="relative p-4 md:p-5 bg-[#fafafa] border border-[#e0e0e0] shadow-[0_15px_35px_rgba(0,0,0,0.15)] z-20 w-72 md:w-[350px] hover:-translate-y-2 hover:-rotate-1 hover:shadow-[0_25px_50px_rgba(0,0,0,0.25)] transition-all duration-500 ease-out cursor-pointer group"
-            >
-              {/* Pop-out Star (Behind frame) */}
-              <svg className="absolute top-4 right-4 w-12 h-12 text-[#B8FF3B] opacity-0 group-hover:opacity-100 group-hover:-translate-y-12 group-hover:translate-x-8 group-hover:rotate-[30deg] transition-all duration-500 ease-out z-[-1]" viewBox="0 0 100 100" fill="currentColor" stroke="#111111" strokeWidth="4">
-                <path d="M50 10L62 38L92 40L68 58L75 88L50 72L25 88L32 58L8 40L38 38Z" strokeLinejoin="round" />
-              </svg>
-
-              {/* Pop-out Heart (Behind frame) */}
-              <svg className="absolute top-4 left-4 w-10 h-10 text-[#A855F7] opacity-0 group-hover:opacity-100 group-hover:-translate-y-10 group-hover:-translate-x-8 group-hover:-rotate-[20deg] transition-all duration-500 delay-75 ease-out z-[-1]" viewBox="0 0 100 100" fill="currentColor" stroke="#111111" strokeWidth="4">
-                <path d="M50 85C50 85 15 55 15 35C15 20 30 10 45 20C50 24 50 24 50 24C50 24 50 24 55 20C70 10 85 20 85 35C85 55 50 85 50 85Z" strokeLinejoin="round" />
-              </svg>
-
-              {/* Tape */}
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-16 h-6 bg-[#f5e6d3]/90 backdrop-blur-sm rotate-2 shadow-sm z-30 opacity-90 border border-black/5 group-hover:-translate-y-1 group-hover:-rotate-3 transition-all duration-500"></div>
-              
-              <div className="w-full aspect-[4/5] bg-gray-200 overflow-hidden relative shadow-[inset_0_2px_4px_rgba(0,0,0,0.06)]">
-                 <img src="/profile.jpeg" alt="Debalin Sinha" className="w-full h-full object-cover filter contrast-105 saturate-105 group-hover:scale-110 transition-transform duration-700 ease-out" />
-              </div>
-              <div className="mt-5 flex flex-col items-center justify-center pb-2">
-                <span className="font-label-caps text-3xl text-[#111111] handwritten-font rotate-1 group-hover:text-[#A855F7] group-hover:-rotate-1 transition-all duration-500">Debalin Sinha</span>
-              </div>
-            </motion.div>
           </div>
         </div>
 

@@ -1,84 +1,124 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { GraduationCap, BookOpen, Calendar, MapPin } from 'lucide-react';
 
-const educationData = [
+const educationList = [
   {
     id: 1,
-    title: 'B.Tech Computer Science with AI & ML',
-    date: '2025 – 2029',
-    school: 'Lovely Professional University',
-    description: "Bachelor's in Computer Science with AI & ML specialization.",
-    bgColor: 'bg-[#E8DFFF]',
-    rotation: '-rotate-1'
+    degree: 'B.Tech — Computer Science Engineering',
+    specialization: 'Specialization: Artificial Intelligence & Machine Learning',
+    institution: 'Lovely Professional University',
+    duration: '2025 - 2029 (Ongoing)',
+    location: 'Punjab, India',
+    coursework: [
+      'Machine Learning Fundamentals',
+      'Data Structures & Algorithms',
+      'Python Programming',
+      'Database Management Systems',
+      'Object-Oriented Programming (C++)',
+      'Web Development'
+    ],
+    highlight: 'Active Focus on AI/ML Research & Engineering'
   },
   {
     id: 2,
-    title: 'Higher Secondary Education (Class XII)',
-    date: '2024 – 2025',
-    school: 'Manglamaro Mangala Academy (H.S.)',
-    description: 'Score: 70%',
-    bgColor: 'bg-[#FFFDF7]',
-    rotation: 'rotate-1'
-  },
-  {
-    id: 3,
-    title: 'Secondary Education (Class X)',
-    date: '2022 – 2023',
-    school: 'Manglamaro Mangala Academy (H.S.)',
-    description: 'Score: 70%',
-    bgColor: 'bg-[#B8FF3B]',
-    rotation: '-rotate-1'
+    degree: 'Higher Secondary Education (Class XII)',
+    specialization: 'Stream: Science / Mathematics',
+    institution: 'Manglamaro Mangala Academy (H.S.)',
+    duration: '2024 - 2025',
+    location: 'West Bengal, India',
+    coursework: ['Physics', 'Chemistry', 'Mathematics', 'Computer Science'],
+    highlight: 'Strong foundation in Mathematics and Computing'
   }
 ];
 
 const Education = () => {
   return (
-    <section id="education" className="py-16 md:py-20 overflow-hidden relative">
-      <div className="mb-10 md:mb-14 text-center">
-        <h2 className="font-headline-md text-headline-md text-[#111111] highlighter inline-block relative">
-          Education
-        </h2>
-      </div>
+    <section id="education" className="py-12 md:py-16">
+      <div className="max-w-[1280px] mx-auto px-4 md:px-0">
+        
+        {/* Section Heading */}
+        <div className="mb-10 flex items-center gap-3">
+          <div className="bg-[#B5F547] border-[2.5px] border-black px-5 py-2 rounded-2xl shadow-[4px_4px_0px_#000000]">
+            <h2 className="text-3xl md:text-4xl font-black text-black tracking-tight">
+              Education
+            </h2>
+          </div>
+          <span className="font-handwriting text-2xl text-black font-bold hidden sm:inline-block rotate-1">
+            🎓 Academic Foundation
+          </span>
+        </div>
 
-      <div className="max-w-4xl mx-auto px-4 relative">
-        <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 border-l-4 border-dashed border-[#222222]/20 z-0"></div>
+        {/* Editorial Timeline Cards */}
+        <div className="space-y-8">
+          {educationList.map((item, idx) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.15 }}
+              className="bg-white border-[2.5px] border-black rounded-2xl p-6 sm:p-8 shadow-[6px_6px_0px_#000000] relative overflow-hidden"
+            >
+              <div className="flex flex-col md:flex-row md:items-start justify-between pb-4 border-b-2 border-black gap-4">
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2.5">
+                    <div className="bg-[#B5F547] p-2 rounded-xl border border-black shadow-[2px_2px_0px_#000]">
+                      <GraduationCap size={22} className="stroke-[2.5] text-black" />
+                    </div>
+                    <h3 className="text-2xl font-black text-black">
+                      {item.degree}
+                    </h3>
+                  </div>
 
-        <div className="space-y-10 md:space-y-14">
-          {educationData.map((edu, idx) => {
-            const isEven = idx % 2 === 0;
+                  <p className="font-extrabold text-base text-[#10B981] pt-1">
+                    {item.specialization}
+                  </p>
 
-            return (
-              <div key={edu.id} className={`flex flex-col md:flex-row gap-8 items-center relative z-10 ${!isEven ? 'md:flex-row-reverse' : ''}`}>
-                
-                {/* Timeline Dot */}
-                <div className={`absolute left-4 md:left-1/2 -translate-x-[14px] w-8 h-8 rounded-full border-4 border-[#222222] bg-[#FFFDF7] z-20 flex items-center justify-center`}>
-                  <div className="w-2 h-2 rounded-full bg-[#111111]"></div>
+                  <p className="font-bold text-base text-black/80 flex items-center gap-2">
+                    <BookOpen size={16} className="stroke-[2.5]" />
+                    {item.institution}
+                  </p>
                 </div>
 
-                <motion.div 
-                  initial={{ opacity: 0, x: isEven ? 50 : -50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  className={`w-full md:w-1/2 pl-12 md:pl-0 ${isEven ? 'md:pr-12 text-left md:text-right' : 'md:pl-12 text-left'}`}
-                >
-                  <div className={`relative p-6 md:p-8 border-2 border-[#222222] ${edu.bgColor} shadow-[6px_6px_0px_rgba(34,34,34,1)] hover:-translate-y-1 hover:shadow-[8px_8px_0px_rgba(34,34,34,1)] transition-all ${edu.rotation} hover:rotate-0 scrapbook-border`}>
-                    
-                    {/* Tape */}
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-12 h-4 bg-white/40 backdrop-blur-sm border border-[#222222]/20 rotate-2"></div>
-                    
-                    <span className="font-label-caps text-xs uppercase text-[#111111] font-bold px-2 py-1 bg-white border border-[#222222] inline-block mb-3">{edu.date}</span>
-                    <h3 className="font-display-lg-mobile text-2xl font-bold text-[#111111] mb-1">{edu.title}</h3>
-                    <p className="font-label-caps text-sm uppercase text-[#111111]/70 font-bold mb-4">{edu.school}</p>
-                    <p className="font-body-md text-[#111111] font-medium">{edu.description}</p>
-                  </div>
-                </motion.div>
-
-                {/* Empty spacer for flex layout */}
-                <div className="hidden md:block w-1/2"></div>
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="font-mono text-xs font-bold bg-[#FAF8F5] border border-black px-3 py-1.5 rounded-lg shadow-[2px_2px_0px_#000] flex items-center gap-1.5">
+                    <Calendar size={14} className="stroke-[2.5]" />
+                    {item.duration}
+                  </span>
+                  <span className="font-mono text-xs font-bold bg-[#FAF8F5] border border-black px-3 py-1.5 rounded-lg shadow-[2px_2px_0px_#000] flex items-center gap-1.5">
+                    <MapPin size={14} className="stroke-[2.5]" />
+                    {item.location}
+                  </span>
+                </div>
               </div>
-            );
-          })}
+
+              {/* Coursework Tags */}
+              <div className="py-4 space-y-3">
+                <h4 className="font-black text-xs uppercase tracking-wider text-black">
+                  Relevant Coursework & Skills:
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {item.coursework.map((course) => (
+                    <span
+                      key={course}
+                      className="bg-[#FAF8F5] border border-black px-3 py-1 rounded-lg text-xs sm:text-sm font-bold text-black shadow-[2px_2px_0px_#000]"
+                    >
+                      {course}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="pt-3 border-t border-black/20 text-right">
+                <span className="font-handwriting text-lg text-black font-bold">
+                  ✨ {item.highlight}
+                </span>
+              </div>
+            </motion.div>
+          ))}
         </div>
+
       </div>
     </section>
   );

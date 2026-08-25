@@ -1,193 +1,164 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Briefcase, Calendar, Award, Rocket, CheckCircle2 } from 'lucide-react';
 
-const experiences = [
+const experienceList = [
   {
     id: 1,
-    title: 'Machine Learning Engineer & SaaS Builder',
-    date: 'FUTURE',
-    description: 'Aiming to build scalable AI products and contribute to impactful open-source projects.',
-    achievements: [
-      'Build real AI products',
-      'Open source contributions',
-      'AI internship opportunities',
-      'SaaS product development'
+    role: 'AI & Machine Learning Developer (Academic Projects)',
+    organization: 'Lovely Professional University',
+    duration: '2025 - Present',
+    status: 'ACTIVE FOCUS',
+    description: 'Developing practical machine learning models, feature engineering pipelines, and data analytics tools while completing specialized coursework in AI/ML.',
+    responsibilities: [
+      'Building predictive models using Scikit-Learn, NumPy, and Pandas',
+      'Implementing neural network architectures with PyTorch & TensorFlow',
+      'Conducting exploratory data analysis and feature selection benchmarks',
+      'Collaborating on team hackathon projects and code reviews'
     ],
-    skills: ['SaaS', 'Open Source', 'AI Products'],
-    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800',
-    imgCaption: 'Future Vision',
-    bgColor: 'bg-[#FFFDF7]',
-    tapeColor: 'bg-[#E8DFFF]/80',
-    rotation: '-rotate-1',
-    isCurrent: false
-  },
-  {
-    id: 2,
-    title: 'AI & ML Degree & Portfolio Development',
-    date: '2025',
-    description: 'Currently pursuing B.Tech in CSE (AI & ML) while building practical portfolio projects.',
-    achievements: [
-      'B.Tech CSE (AI & ML)',
-      'Building portfolio projects',
-      'Learning Machine Learning',
-      'Exploring Prompt Engineering',
-      'Strengthening DSA and development skills'
-    ],
-    skills: ['Machine Learning', 'DSA', 'Prompt Engineering'],
-    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800',
-    imgCaption: 'Current Focus - 2025',
-    bgColor: 'bg-[#B8FF3B]',
-    tapeColor: 'bg-[#111111]/80',
-    rotation: 'rotate-1',
+    technologies: ['Python', 'Scikit-Learn', 'PyTorch', 'TensorFlow', 'C++'],
     isCurrent: true
   },
   {
-    id: 3,
-    title: 'Web Development & Programming',
-    date: '2024',
-    description: 'Built personal projects and strengthened development skills through practical application.',
-    achievements: [
-      'HTML',
-      'CSS',
-      'JavaScript',
-      'React',
-      'Tailwind CSS'
+    id: 2,
+    role: 'Hackathon Competitor & Project Team Lead',
+    organization: 'Tech Con & AI Hackathons',
+    duration: '2023 - 2024',
+    status: 'COMPLETED',
+    description: 'Participated in competitive hackathons and technical symposiums, building functional AI prototype tools under time constraints.',
+    responsibilities: [
+      'Led project ideation and prototype architecture design',
+      'Implemented backend logic and model inference integration',
+      'Presented live technical demonstrations to event judges',
+      'Secured Hackathon Winner recognition for creative AI integration'
     ],
-    skills: ['React', 'JavaScript', 'Tailwind CSS'],
-    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800',
-    imgCaption: 'Web Dev Phase - 2024',
-    bgColor: 'bg-[#E8DFFF]',
-    tapeColor: 'bg-[#B8FF3B]/80',
-    rotation: '-rotate-1',
-    isCurrent: false
-  },
-  {
-    id: 4,
-    title: 'Started Programming Journey',
-    date: '2023',
-    description: 'Began exploring the world of programming, setting the foundation for future development.',
-    achievements: [
-      'Learned programming fundamentals',
-      'Started Python and web technologies',
-      'Developed problem-solving skills'
-    ],
-    skills: ['Python', 'Problem Solving', 'Fundamentals'],
-    image: 'https://images.unsplash.com/photo-1526379095098-d400fd0bfce8?auto=format&fit=crop&q=80&w=800',
-    imgCaption: 'The Beginning - 2023',
-    bgColor: 'bg-[#FFFDF7]',
-    tapeColor: 'bg-[#E8DFFF]/80',
-    rotation: 'rotate-1',
+    technologies: ['Python', 'Generative AI', 'JavaScript', 'HTML/CSS', 'Git'],
     isCurrent: false
   }
 ];
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-16 md:py-20 overflow-hidden">
-      <div className="mb-12 md:mb-16 text-center">
-        <h2 className="font-headline-md text-headline-md text-[#111111] highlighter inline-block relative">
-          My Journey
-          <svg className="absolute -right-20 top-1/2 w-16 h-16 text-[#111111] hidden md:block rotate-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M5 12h14"></path>
-            <path d="m12 5 7 7-7 7"></path>
-          </svg>
-        </h2>
-      </div>
+    <section id="experience" className="py-12 md:py-16">
+      <div className="max-w-[1280px] mx-auto px-4 md:px-0">
+        
+        {/* Section Title */}
+        <div className="mb-10 flex items-center justify-between flex-wrap gap-4">
+          <div className="flex items-center gap-3">
+            <div className="bg-[#B5F547] border-[2.5px] border-black px-5 py-2 rounded-2xl shadow-[4px_4px_0px_#000000]">
+              <h2 className="text-3xl md:text-4xl font-black text-black tracking-tight">
+                Experience
+              </h2>
+            </div>
+            <span className="font-handwriting text-2xl text-black font-bold hidden sm:inline-block rotate-2">
+              📜 Career & Academic Journey
+            </span>
+          </div>
 
-      <div className="max-w-6xl mx-auto px-4 space-y-16 md:space-y-24 relative">
-        <div className="absolute left-1/2 top-0 bottom-0 w-1 border-l-4 border-dashed border-[#222222]/20 hidden lg:block -translate-x-1/2 z-0"></div>
+          {/* Green Status Indicator Pill */}
+          <div className="inline-flex items-center gap-2.5 bg-white border-[2.5px] border-black px-4 py-2 rounded-2xl shadow-[4px_4px_0px_#000000]">
+            <span className="relative flex h-3.5 w-3.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-500 border border-black"></span>
+            </span>
+            <span className="font-black text-sm text-black uppercase tracking-wider">
+              Currently Open to Opportunities
+            </span>
+          </div>
+        </div>
 
-        {experiences.map((exp, idx) => {
-          const isEven = idx % 2 === 0;
+        {/* Status Callout Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-[#B5F547] border-[2.5px] border-black p-6 rounded-2xl shadow-[6px_6px_0px_#000000] mb-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 -rotate-1 hover:rotate-0 transition-transform"
+        >
+          <div className="space-y-1">
+            <div className="flex items-center gap-2">
+              <Rocket size={22} className="stroke-[2.5] text-black" />
+              <h3 className="font-black text-xl text-black">
+                Seeking ML / Software Engineering Internships
+              </h3>
+            </div>
+            <p className="text-black/90 font-medium text-sm sm:text-base">
+              Available for full-time / part-time internship roles in AI, Machine Learning, and Software Development.
+            </p>
+          </div>
 
-          return (
-            <div key={exp.id} className={`flex flex-col lg:flex-row gap-12 lg:gap-20 items-center relative z-10 ${!isEven ? 'lg:flex-row-reverse' : ''}`}>
-              
-              <div className={`hidden lg:block absolute top-1/2 -translate-y-1/2 w-24 h-24 text-[#222222]/30 ${isEven ? 'left-[calc(50%-3rem)]' : 'right-[calc(50%-3rem)] scale-x-[-1]'}`}>
-                 <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                    <path d="M10 50 Q 50 10 90 50" stroke="currentColor" strokeWidth="4" strokeDasharray="8 8" fill="none"/>
-                    <polygon points="95,50 85,40 85,60" fill="currentColor"/>
-                 </svg>
+          <a
+            href="#contact"
+            className="inline-block bg-white hover:bg-gray-50 border-2 border-black px-6 py-2.5 rounded-xl font-black text-sm text-black shadow-[3px_3px_0px_#000000] brutal-btn shrink-0"
+          >
+            Hire / Contact Me
+          </a>
+        </motion.div>
+
+        {/* Timeline Cards */}
+        <div className="space-y-8">
+          {experienceList.map((exp, idx) => (
+            <motion.div
+              key={exp.id}
+              initial={{ opacity: 0, x: idx % 2 === 0 ? -20 : 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.15 }}
+              className="bg-white border-[2.5px] border-black rounded-2xl p-6 sm:p-8 shadow-[6px_6px_0px_#000000] relative overflow-hidden"
+            >
+              <div className="flex flex-col md:flex-row md:items-center justify-between pb-4 border-b-2 border-black gap-3">
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-black text-black">
+                    {exp.role}
+                  </h3>
+                  <p className="font-extrabold text-base text-black/80 flex items-center gap-2 mt-0.5">
+                    <Briefcase size={18} className="stroke-[2.5] text-black" />
+                    {exp.organization}
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <span className="inline-flex items-center gap-1.5 font-mono text-xs font-bold bg-[#FAF8F5] border border-black px-3 py-1.5 rounded-lg shadow-[2px_2px_0px_#000]">
+                    <Calendar size={14} className="stroke-[2.5]" />
+                    {exp.duration}
+                  </span>
+                  <span className="font-black text-xs bg-[#B5F547] border border-black px-2.5 py-1 rounded shadow-[2px_2px_0px_#000]">
+                    {exp.status}
+                  </span>
+                </div>
               </div>
 
-              <motion.div 
-                initial={{ opacity: 0, x: isEven ? -50 : 50, rotate: isEven ? -5 : 5 }}
-                whileInView={{ opacity: 1, x: 0, rotate: isEven ? -2 : 2 }}
-                viewport={{ once: true, margin: "-100px" }}
-                whileHover={{ scale: 1.05, rotate: 0, zIndex: 20 }}
-                className="w-full lg:w-5/12 flex justify-center cursor-crosshair relative"
-              >
-                <div className="polaroid-frame p-4 bg-[#FFFDF7] border-2 border-[#222222] shadow-[8px_8px_0px_rgba(34,34,34,1)] hover:shadow-none transition-shadow relative">
-                  <div className={`absolute -top-4 left-1/2 -translate-x-1/2 w-16 h-6 ${exp.tapeColor} backdrop-blur-md rotate-2 border border-[#222222]`}></div>
-                  
-                  <div className="aspect-[4/3] w-full bg-gray-200 overflow-hidden border-2 border-[#222222]">
-                    <img src={exp.image} alt={exp.title} className="w-full h-full object-cover filter contrast-125 saturate-50" />
-                  </div>
-                  <div className="mt-4 text-center">
-                    <span className="font-label-caps text-xs uppercase font-bold text-[#111111] underline decoration-wavy decoration-[#B8FF3B]">{exp.imgCaption}</span>
-                  </div>
-                </div>
-              </motion.div>
+              <div className="py-4 space-y-4">
+                <p className="text-black/85 font-medium text-base leading-relaxed">
+                  {exp.description}
+                </p>
 
-              <motion.div 
-                initial={{ opacity: 0, x: isEven ? 50 : -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                className="w-full lg:w-7/12"
-              >
-                <div className={`relative p-8 md:p-10 border-2 border-[#222222] bg-[#FFFDF7] ${exp.isCurrent ? 'shadow-[12px_12px_0px_rgba(184,255,59,1)]' : 'shadow-[8px_8px_0px_rgba(34,34,34,1)]'} hover:-translate-y-2 hover:shadow-[12px_12px_0px_rgba(34,34,34,1)] transition-all ${exp.rotation} hover:rotate-0 scrapbook-border`}>
-                  
-                  {exp.isCurrent && (
-                    <div className="absolute -top-4 -right-4 bg-[#111111] text-[#B8FF3B] font-bold px-4 py-2 text-xs uppercase flex items-center gap-2 border-2 border-[#222222] shadow-[4px_4px_0px_rgba(184,255,59,1)] z-20 rotate-3 animate-pulse">
-                      <div className="w-2.5 h-2.5 rounded-full bg-[#B8FF3B] shadow-[0_0_8px_rgba(184,255,59,0.8)]"></div>
-                      CURRENT FOCUS
-                    </div>
-                  )}
-
-                  <div className={`absolute top-0 bottom-0 w-8 flex flex-col justify-evenly border-r-2 border-[#222222]/20 bg-[#F5F4E8] ${isEven ? 'left-0' : 'right-0 border-r-0 border-l-2'}`}>
-                    {[1,2,3,4,5].map(i => (
-                       <div key={i} className="w-4 h-4 rounded-full bg-[#111111]/5 border border-[#222222]/30 mx-auto shadow-inner"></div>
+                <div className="space-y-2">
+                  <h4 className="font-black text-xs uppercase tracking-wider text-black">
+                    Responsibilities & Achievements:
+                  </h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    {exp.responsibilities.map((item, i) => (
+                      <div key={i} className="flex items-start gap-2 bg-[#FAF8F5] border border-black p-2.5 rounded-lg">
+                        <CheckCircle2 size={16} className="text-black stroke-[2.5] mt-0.5 shrink-0" />
+                        <span className="text-xs sm:text-sm font-semibold text-black">{item}</span>
+                      </div>
                     ))}
                   </div>
-
-                  <div className={`${isEven ? 'pl-8 md:pl-10' : 'pr-8 pl-0 md:pr-10 md:pl-0'}`}>
-                    <div className="flex flex-col xl:flex-row xl:items-end justify-between mb-4 border-b-2 border-dashed border-[#222222]/30 pb-4 gap-4">
-                      <div>
-                        <h3 className="font-display-lg-mobile text-3xl font-bold text-[#111111] mb-2">{exp.title}</h3>
-                        <span className="font-label-caps text-sm uppercase text-[#111111] font-bold px-3 py-1 bg-[#F5F4E8] border-2 border-[#222222] rotate-1 inline-block">{exp.date}</span>
-                      </div>
-                    </div>
-
-                    <p className="font-body-md text-[#111111]/80 mb-6 text-lg leading-relaxed font-medium">
-                      {exp.description}
-                    </p>
-
-                    <div className="mb-8">
-                      <span className="font-label-caps text-xs uppercase text-[#111111] font-bold mb-3 block tracking-widest">Key Focus:</span>
-                      <ul className="space-y-4">
-                        {exp.achievements.map((ach, i) => (
-                          <li key={i} className="flex items-start gap-3 bg-white p-3 border border-[#222222]/20 rounded-sm">
-                            <span className="material-symbols-outlined text-[#B8FF3B] mt-0.5 text-lg">arrow_right_alt</span>
-                            <span className="font-body-md font-medium text-[#111111]">{ach}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div className={`pt-6 border-t-2 border-[#222222]/10 flex flex-wrap gap-2 ${exp.bgColor} p-4 border-2 border-[#222222] rounded-sm -rotate-1`}>
-                      {exp.skills.map(skill => (
-                        <span key={skill} className="font-label-caps text-[10px] uppercase font-bold text-[#111111] bg-white px-2 py-1 border-2 border-[#222222] shadow-[2px_2px_0px_rgba(34,34,34,1)] hover:scale-110 transition-transform cursor-crosshair">
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
                 </div>
-              </motion.div>
-            </div>
-          );
-        })}
+              </div>
+
+              <div className="pt-3 border-t border-black/20 flex flex-wrap items-center gap-2">
+                <span className="font-mono text-xs font-bold text-black/60 mr-2">TECH:</span>
+                {exp.technologies.map((tech) => (
+                  <span key={tech} className="bg-white border border-black px-2.5 py-1 rounded text-xs font-bold text-black shadow-[1.5px_1.5px_0px_#000]">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
       </div>
     </section>
   );

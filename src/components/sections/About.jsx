@@ -1,83 +1,144 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { GraduationCap, Heart, Zap, Sparkles } from 'lucide-react';
 
 const About = () => {
+  const interests = [
+    'AI / Machine Learning',
+    'Data Science & Analytics',
+    'Software Development',
+    'Algorithmic Problem Solving',
+  ];
+
+  const strengths = [
+    'Fast Learner & Adaptable',
+    'Analytical Problem Solver',
+    'Team Collaboration & Tech Events',
+    'Creative System Thinking',
+  ];
+
   return (
-    <section id="about" className="py-16 md:py-20">
-      <div className="mb-10 md:mb-14">
-        <h2 className="font-headline-md text-headline-md text-[#111111] inline-block highlighter relative hover-marker-highlight">
-          About Me
-        </h2>
-      </div>
-
-      <div className="flex flex-col lg:flex-row gap-10 lg:gap-14 items-start">
-        {/* Notebook Paper Content */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="w-full lg:w-2/3 bg-[#FFFDF7] p-8 md:p-12 border-2 border-[#222222] shadow-[8px_8px_0px_rgba(34,34,34,1)] relative scrapbook-border hover-notebook-turn"
-        >
-          {/* Ring binder holes */}
-          <div className="absolute top-0 bottom-0 left-0 w-8 border-r-2 border-[#222222]/20 flex flex-col justify-evenly bg-[#F5F4E8]">
-             {[1,2,3,4,5,6].map(i => (
-               <div key={i} className="w-4 h-4 rounded-full bg-[#111111]/5 border border-[#222222]/30 mx-auto shadow-inner"></div>
-             ))}
+    <section id="about" className="py-12 md:py-16">
+      <div className="max-w-[1280px] mx-auto px-4 md:px-0">
+        
+        {/* Section Heading */}
+        <div className="mb-10 flex items-center gap-3">
+          <div className="bg-[#B5F547] border-[2.5px] border-black px-5 py-2 rounded-2xl shadow-[4px_4px_0px_#000000]">
+            <h2 className="text-3xl md:text-4xl font-black text-black tracking-tight">
+              About Me
+            </h2>
           </div>
+          <span className="font-handwriting text-2xl text-black font-bold hidden sm:inline-block -rotate-3">
+            ✨ Editorial & Background
+          </span>
+        </div>
 
-          <div className="pl-10 space-y-8 font-body-lg text-[#111111]/80 leading-relaxed text-lg">
-            
-            <div className="bg-[#B8FF3B]/20 p-6 border-l-4 border-[#B8FF3B] border-2 border-r-[#222222] border-y-[#222222] rotate-1 shadow-[4px_4px_0px_rgba(34,34,34,1)] mb-8">
-              <h3 className="font-label-caps text-xs font-bold uppercase tracking-widest text-[#111111] mb-2 handwritten-font">Career Objective</h3>
-              <p className="font-medium text-[#111111]">
-                Aspiring AI &amp; ML Engineer focused on building intelligent systems, automation tools, and impactful software products while combining technical problem-solving with creative thinking.
-              </p>
-            </div>
-
-            <p>
-              Motivated first-year Computer Science student with hands-on experience in <strong className="text-[#111111] bg-[#E8DFFF] px-1 border border-[#222222] -rotate-1 inline-block">Python, JavaScript, C, C++, and HTML/CSS</strong>, focused on building practical software, AI-powered tools, and scalable digital solutions.
-            </p>
-            <p>
-              Skilled in <strong className="text-[#111111] bg-[#B8FF3B] px-1 border border-[#222222] rotate-1 inline-block">Generative AI Prompt Engineering</strong> to accelerate creative workflows and improve AI outputs.
-            </p>
-            <p>
-              Passionate about building software, AI-powered tools, automation systems, and digital experiences while continuously learning emerging technologies.
-            </p>
-            
-            {/* Signature */}
-            <div className="pt-8 flex justify-end">
-               <div className="text-right">
-                 <div className="font-label-caps text-3xl font-bold handwritten-font text-[#222222]/60 -rotate-3 border-b border-[#222222]/30 pb-2 mb-1">Debalin Sinha</div>
-                 <div className="font-label-caps text-xs font-bold uppercase tracking-widest">Kolkata, WB</div>
-               </div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Polaroids / Currently Learning */}
-        <div className="w-full lg:w-1/3 flex flex-col gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
-          {/* Currently Learning Note */}
-          <motion.div
-             initial={{ opacity: 0, rotate: -10 }}
-             whileInView={{ opacity: 1, rotate: -2 }}
-             viewport={{ once: true }}
-             className="bg-[#E8DFFF] p-6 border-2 border-[#222222] shadow-[6px_6px_0px_rgba(34,34,34,1)] w-full max-w-sm relative hover-sticky-bounce"
+          {/* Main Editorial Card (Cols 1-7) */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="lg:col-span-7 bg-white border-[2.5px] border-black p-6 sm:p-8 md:p-10 rounded-2xl shadow-[6px_6px_0px_#000000] relative space-y-6"
           >
-             <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-12 h-6 bg-[#B8FF3B]/60 backdrop-blur-sm border border-[#222222] rotate-2"></div>
-             
-             <h3 className="font-label-caps text-sm font-bold uppercase tracking-widest mb-4 border-b-2 border-dashed border-[#222222] pb-2 text-[#111111]">Currently Learning</h3>
-             <ul className="space-y-3 font-body-md font-medium text-[#111111]">
-               <li className="flex items-center gap-2"><span className="material-symbols-outlined text-sm">auto_awesome</span> Data Structures &amp; Algorithms</li>
-               <li className="flex items-center gap-2"><span className="material-symbols-outlined text-sm">auto_awesome</span> Machine Learning</li>
-               <li className="flex items-center gap-2"><span className="material-symbols-outlined text-sm">auto_awesome</span> AI &amp; ML Fundamentals</li>
-               <li className="flex items-center gap-2"><span className="material-symbols-outlined text-sm">auto_awesome</span> Advanced JavaScript</li>
-               <li className="flex items-center gap-2"><span className="material-symbols-outlined text-sm">auto_awesome</span> Modern Web Development</li>
-               <li className="flex items-center gap-2"><span className="material-symbols-outlined text-sm">auto_awesome</span> Problem Solving</li>
-             </ul>
+            {/* Corner Tape Decorative Accent */}
+            <div className="absolute -top-3 left-8 bg-[#B5F547] border-2 border-black px-4 py-1 text-xs font-black uppercase shadow-[2px_2px_0px_#000000] -rotate-2">
+              Background & Vision
+            </div>
+
+            <p className="text-lg md:text-xl text-black font-medium leading-relaxed pt-2">
+              I am a Computer Science student specializing in <strong className="bg-[#B5F547] px-2 py-0.5 border border-black rounded shadow-[2px_2px_0px_#000]">Artificial Intelligence & Machine Learning</strong> at Lovely Professional University.
+            </p>
+
+            <p className="text-base sm:text-lg text-black/90 leading-relaxed font-normal">
+              My core focus is on bridging data science concepts with production-ready code. From building ML model pipelines and Python utilities to participating in national hackathons and tech symposiums, I thrive on tackling complex engineering challenges.
+            </p>
+
+            {/* Education Highlight Box */}
+            <div className="bg-[#FAF8F5] border-[2px] border-black p-5 rounded-xl shadow-[4px_4px_0px_#000000] flex items-start gap-4 rotate-1 hover:rotate-0 transition-transform">
+              <div className="bg-[#B5F547] p-3 rounded-xl border-2 border-black shadow-[2px_2px_0px_#000]">
+                <GraduationCap size={28} className="stroke-[2.5] text-black" />
+              </div>
+              <div className="space-y-1">
+                <h3 className="font-extrabold text-lg sm:text-xl text-black">
+                  B.Tech — Computer Science Engineering
+                </h3>
+                <p className="font-bold text-sm text-black/80">
+                  Specialization: AI & Machine Learning
+                </p>
+                <p className="text-sm font-semibold text-black/70">
+                  Lovely Professional University
+                </p>
+              </div>
+            </div>
+
+            {/* Quote / Handwritten Note */}
+            <div className="pt-2 border-t-2 border-dashed border-black/30 flex items-center justify-between flex-wrap gap-4">
+              <span className="font-handwriting text-2xl text-black font-bold -rotate-1">
+                "Combining logic, data, and curiosity to solve real problems."
+              </span>
+              <span className="font-mono text-xs font-bold bg-black text-white px-3 py-1.5 rounded shadow-[2px_2px_0px_#B5F547]">
+                Kolkata, WB, India 📍
+              </span>
+            </div>
           </motion.div>
 
+          {/* Side Cards (Cols 8-12): Interests & Strengths */}
+          <div className="lg:col-span-5 space-y-6">
+            
+            {/* Interests Card */}
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-white border-[2.5px] border-black p-6 rounded-2xl shadow-[5px_5px_0px_#000000] -rotate-1 hover:rotate-0 transition-transform"
+            >
+              <div className="flex items-center gap-2.5 mb-4 pb-3 border-b-2 border-black">
+                <Heart className="stroke-[2.5] text-black fill-[#B5F547]" size={22} />
+                <h3 className="font-extrabold text-xl text-black">Interests</h3>
+              </div>
+              <div className="flex flex-wrap gap-2.5">
+                {interests.map((item, idx) => (
+                  <span 
+                    key={idx}
+                    className="bg-[#FAF8F5] border-2 border-black px-3.5 py-1.5 rounded-xl font-bold text-sm text-black shadow-[2px_2px_0px_#000000]"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Strengths Card */}
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-white border-[2.5px] border-black p-6 rounded-2xl shadow-[5px_5px_0px_#000000] rotate-1 hover:rotate-0 transition-transform"
+            >
+              <div className="flex items-center gap-2.5 mb-4 pb-3 border-b-2 border-black">
+                <Zap className="stroke-[2.5] text-black fill-[#B5F547]" size={22} />
+                <h3 className="font-extrabold text-xl text-black">Strengths</h3>
+              </div>
+              <div className="flex flex-wrap gap-2.5">
+                {strengths.map((item, idx) => (
+                  <span 
+                    key={idx}
+                    className="bg-[#B5F547] border-2 border-black px-3.5 py-1.5 rounded-xl font-bold text-sm text-black shadow-[2px_2px_0px_#000000]"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+
+          </div>
+
         </div>
+
       </div>
     </section>
   );

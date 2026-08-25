@@ -1,63 +1,80 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { Menu, X } from 'lucide-react';
 
 const TopNavBar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const navLinks = [
+    { name: 'About', href: '#about' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Coding', href: '#leetcode' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Achievements', href: '#achievements' },
+  ];
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-md shadow-sm border-b-2 border-[#222222]' : 'bg-transparent'}`}>
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        
-        {/* Logo */}
-        <a href="#" className="font-display-lg-mobile text-2xl font-extrabold text-[#111111] flex items-center">
-          Debalin<span className="text-[#B8FF3B] text-4xl">.</span>
-        </a>
-
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          <a href="#about" className="font-label-caps text-sm font-bold uppercase text-[#111111] hover:text-[#B8FF3B] transition-colors hover-ink-spread">About</a>
-          <a href="#arsenal" className="font-label-caps text-sm font-bold uppercase text-[#111111] hover:text-[#B8FF3B] transition-colors hover-ink-spread">Skills</a>
-          <a href="#experience" className="font-label-caps text-sm font-bold uppercase text-[#111111] hover:text-[#B8FF3B] transition-colors hover-ink-spread">Experience</a>
-          <a href="#projects" className="font-label-caps text-sm font-bold uppercase text-[#111111] hover:text-[#B8FF3B] transition-colors hover-ink-spread">Projects</a>
-          <a href="#creative" className="font-label-caps text-sm font-bold uppercase text-[#111111] hover:text-[#B8FF3B] transition-colors hover-ink-spread">Creative Work</a>
-          <a href="#contact" className="font-label-caps text-sm font-bold uppercase text-[#111111] hover:text-[#B8FF3B] transition-colors hover-ink-spread">Contact</a>
-        </nav>
-
-        {/* CTA & Mobile Toggle */}
-        <div className="flex items-center gap-4">
-          <a href="#contact" className="hidden md:inline-flex items-center justify-center gap-2 px-6 py-2 bg-[#B8FF3B] text-[#111111] font-bold font-label-caps uppercase text-sm border-2 border-[#111111] shadow-[2px_2px_0px_rgba(17,17,17,1)] hover:shadow-[4px_4px_0px_rgba(17,17,17,1)] hover:-translate-y-[1px] transition-all rounded-sm">
-            <span className="material-symbols-outlined text-[18px]">person</span>
-            Hire Me
+    <header className="sticky top-4 z-50 px-4 md:px-8 max-w-[1280px] mx-auto mt-3">
+      <nav className="bg-white border-[2.5px] border-black rounded-2xl p-2.5 md:p-3 shadow-[5px_5px_0px_#000000] flex items-center justify-between transition-all">
+        {/* Mobile menu toggle button */}
+        <div className="flex md:hidden items-center justify-between w-full">
+          <a href="#" className="font-extrabold text-lg tracking-tight text-black flex items-center gap-1.5">
+            <span className="bg-[#B5F547] border-2 border-black px-2 py-0.5 rounded shadow-[2px_2px_0px_#000000] text-sm">DS</span>
+            Debalin Sinha
           </a>
-          
-          <button 
-            className="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="p-1.5 bg-[#B5F547] border-2 border-black rounded-lg shadow-[2px_2px_0px_#000000] focus:outline-none text-black font-bold"
+            aria-label="Toggle Navigation Menu"
           >
-            <span className={`block w-6 h-0.5 bg-[#111111] transition-transform ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-            <span className={`block w-6 h-0.5 bg-[#111111] transition-opacity ${isMenuOpen ? 'opacity-0' : ''}`}></span>
-            <span className={`block w-6 h-0.5 bg-[#111111] transition-transform ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+            {isOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
-      </div>
 
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="md:hidden absolute top-20 left-0 w-full bg-white border-b-2 border-[#222222] shadow-lg py-4 px-6 flex flex-col gap-4">
-          <a href="#about" onClick={() => setIsMenuOpen(false)} className="font-label-caps text-sm font-bold uppercase text-[#111111] hover:text-[#B8FF3B] transition-colors">About</a>
-          <a href="#arsenal" onClick={() => setIsMenuOpen(false)} className="font-label-caps text-sm font-bold uppercase text-[#111111] hover:text-[#B8FF3B] transition-colors">Skills</a>
-          <a href="#experience" onClick={() => setIsMenuOpen(false)} className="font-label-caps text-sm font-bold uppercase text-[#111111] hover:text-[#B8FF3B] transition-colors">Experience</a>
-          <a href="#projects" onClick={() => setIsMenuOpen(false)} className="font-label-caps text-sm font-bold uppercase text-[#111111] hover:text-[#B8FF3B] transition-colors">Projects</a>
-          <a href="#creative" onClick={() => setIsMenuOpen(false)} className="font-label-caps text-sm font-bold uppercase text-[#111111] hover:text-[#B8FF3B] transition-colors">Creative Work</a>
-          <a href="#contact" onClick={() => setIsMenuOpen(false)} className="font-label-caps text-sm font-bold uppercase text-[#111111] hover:text-[#B8FF3B] transition-colors">Contact</a>
-          <a href="#contact" onClick={() => setIsMenuOpen(false)} className="inline-flex items-center justify-center px-6 py-3 bg-[#111111] text-[#F5F4E8] font-bold font-label-caps uppercase text-sm border-2 border-[#111111] w-full text-center mt-2 shadow-[4px_4px_0px_rgba(184,255,59,1)] hover:shadow-none">
-            Hire Me
+        {/* Desktop Links */}
+        <div className="hidden md:flex items-center space-x-8 lg:space-x-12 pl-6">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              className="font-bold text-base lg:text-lg text-black hover:text-[#000000] relative group py-1 transition-colors"
+            >
+              {link.name}
+              <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-[#B5F547] group-hover:w-full transition-all duration-200 border-b border-black"></span>
+            </a>
+          ))}
+        </div>
+
+        {/* Desktop Contact Me CTA */}
+        <div className="hidden md:block">
+          <a
+            href="#contact"
+            className="inline-block bg-[#B5F547] hover:bg-[#A5EA36] text-black font-extrabold text-base lg:text-lg px-6 py-2 rounded-xl border-[2.5px] border-black shadow-[4px_4px_0px_#000000] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_#000000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0px_#000000] transition-all"
+          >
+            Contact Me
+          </a>
+        </div>
+      </nav>
+
+      {/* Mobile Drawer */}
+      {isOpen && (
+        <div className="md:hidden mt-2 bg-white border-[2.5px] border-black rounded-2xl p-5 shadow-[6px_6px_0px_#000000] flex flex-col space-y-4 animate-in fade-in slide-in-from-top-2 duration-200">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={() => setIsOpen(false)}
+              className="font-extrabold text-lg text-black hover:bg-[#B5F547] p-2 rounded-xl border border-transparent hover:border-black transition-all"
+            >
+              {link.name}
+            </a>
+          ))}
+          <a
+            href="#contact"
+            onClick={() => setIsOpen(false)}
+            className="inline-block text-center bg-[#B5F547] text-black font-extrabold text-lg py-3 rounded-xl border-2 border-black shadow-[4px_4px_0px_#000000]"
+          >
+            Contact Me
           </a>
         </div>
       )}

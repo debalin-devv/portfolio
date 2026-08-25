@@ -1,43 +1,44 @@
 import React from 'react';
+import TechMarquee from './components/TechMarquee';
 import TopNavBar from './components/TopNavBar';
-import Footer from './components/Footer';
 import Hero from './components/sections/Hero';
-import DeveloperStats from './components/sections/DeveloperStats';
 import About from './components/sections/About';
 import Skills from './components/sections/Skills';
-import Education from './components/sections/Education';
-import Experience from './components/sections/Experience';
 import Projects from './components/sections/Projects';
-import AIAssistant from './components/sections/AIAssistant';
-import TerminalMode from './components/sections/TerminalMode';
-import CreativeWork from './components/sections/CreativeWork';
-import LearningJourney from './components/sections/LearningJourney';
-import GitHubActivity from './components/sections/GitHubActivity';
-import DigitalGarden from './components/sections/DigitalGarden';
+import LeetCode from './components/sections/LeetCode';
+import Experience from './components/sections/Experience';
+import Achievements from './components/sections/Achievements';
+import Education from './components/sections/Education';
+import Certifications from './components/sections/Certifications';
+import Resume from './components/sections/Resume';
 import Contact from './components/sections/Contact';
-import DeveloperMode from './components/ui/DeveloperMode';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex flex-col font-sans selection:bg-[#B5F547] selection:text-black">
+      {/* Top Technical Marquee Banner */}
+      <TechMarquee />
+
+      {/* Sticky Navigation Bar */}
       <TopNavBar />
-      <main className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 space-y-16 md:space-y-20">
+
+      {/* Main Portfolio Content */}
+      <main className="flex-grow max-w-[1280px] w-full mx-auto px-4 md:px-8 space-y-8 md:space-y-12">
         <Hero />
-        <DeveloperStats />
         <About />
         <Skills />
-        <Education />
-        <Experience />
         <Projects />
-        <AIAssistant />
-        <TerminalMode />
-        <CreativeWork />
-        <LearningJourney />
-        <GitHubActivity />
-        <DigitalGarden />
+        <LeetCode />
+        <Experience />
+        <Achievements />
+        <Education />
+        <Certifications />
+        <Resume />
         <Contact />
       </main>
-      <DeveloperMode />
+
+      {/* Footer */}
       <Footer />
     </div>
   );
