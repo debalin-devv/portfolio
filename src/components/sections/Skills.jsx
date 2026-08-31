@@ -5,61 +5,45 @@ import { Code2, Cpu, Globe, Database, Wrench } from 'lucide-react';
 const Skills = () => {
   const skillCategories = [
     {
-      title: 'PROGRAMMING',
+      title: 'LANGUAGES',
       icon: Code2,
       isLearning: false,
       skills: [
-        { name: 'C', highlighted: false, rotation: '-rotate-2' },
         { name: 'C++', highlighted: true, rotation: 'rotate-1' },
         { name: 'Python', highlighted: true, rotation: '-rotate-1' },
-        { name: 'Java', highlighted: false, rotation: 'rotate-2' },
+        { name: 'C', highlighted: false, rotation: '-rotate-2' },
+        { name: 'JavaScript', highlighted: true, rotation: 'rotate-2' },
       ],
     },
     {
-      title: 'AI / ML',
-      icon: Cpu,
-      isLearning: true,
-      skills: [
-        { name: 'Machine Learning', status: 'active', rotation: 'rotate-2' },
-        { name: 'NumPy', status: 'active', rotation: '-rotate-1' },
-        { name: 'Pandas', status: 'active', rotation: 'rotate-1' },
-        { name: 'Matplotlib', status: 'active', rotation: '-rotate-2' },
-        { name: 'Scikit-learn', status: 'exploring', rotation: 'rotate-2' },
-        { name: 'TensorFlow', status: 'exploring', rotation: '-rotate-1' },
-        { name: 'PyTorch', status: 'exploring', rotation: 'rotate-1' },
-      ],
-    },
-    {
-      title: 'WEB',
+      title: 'WEB TECHNOLOGIES',
       icon: Globe,
       isLearning: false,
       skills: [
-        { name: 'HTML', highlighted: false, rotation: '-rotate-1' },
-        { name: 'CSS', highlighted: false, rotation: 'rotate-2' },
-        { name: 'JavaScript', highlighted: true, rotation: '-rotate-2' },
-        { name: 'React', highlighted: true, rotation: 'rotate-1' },
-        { name: 'Tailwind CSS', highlighted: false, rotation: '-rotate-1' },
+        { name: 'HTML', highlighted: true, rotation: '-rotate-1' },
+        { name: 'CSS', highlighted: true, rotation: 'rotate-2' },
       ],
     },
     {
-      title: 'DATABASE',
-      icon: Database,
-      isLearning: false,
-      skills: [
-        { name: 'MySQL', highlighted: true, rotation: 'rotate-1' },
-        { name: 'MongoDB', highlighted: false, rotation: '-rotate-2' },
-      ],
-    },
-    {
-      title: 'TOOLS',
+      title: 'TOOLS & PLATFORMS',
       icon: Wrench,
       isLearning: false,
       skills: [
         { name: 'Git', highlighted: true, rotation: '-rotate-1' },
         { name: 'GitHub', highlighted: true, rotation: 'rotate-2' },
-        { name: 'VS Code', highlighted: false, rotation: '-rotate-2' },
-        { name: 'Jupyter', highlighted: false, rotation: 'rotate-1' },
-        { name: 'Google Colab', highlighted: false, rotation: '-rotate-1' },
+        { name: 'MongoDB', highlighted: true, rotation: '-rotate-2' },
+        { name: 'MS SQL Server', highlighted: true, rotation: 'rotate-1' },
+      ],
+    },
+    {
+      title: 'SOFT SKILLS',
+      icon: Cpu,
+      isLearning: false,
+      skills: [
+        { name: 'Problem-Solving', highlighted: true, rotation: 'rotate-1' },
+        { name: 'Team Player', highlighted: false, rotation: '-rotate-1' },
+        { name: 'Project Management', highlighted: true, rotation: 'rotate-2' },
+        { name: 'Adaptability', highlighted: false, rotation: '-rotate-2' },
       ],
     },
   ];

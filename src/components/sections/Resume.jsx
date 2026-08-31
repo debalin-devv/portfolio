@@ -45,29 +45,29 @@ const Resume = () => {
                     Debalin Sinha
                   </h3>
                   <p className="font-bold text-xs sm:text-sm text-black/75">
-                    B.Tech Computer Science Engineering (AI & ML)
+                    B.Tech Computer Science Engineering (CGPA: 7.58)
                   </p>
                 </div>
               </div>
 
               <span className="hidden sm:inline-block font-mono text-[11px] font-bold text-black/60 bg-[#FAF8F5] border border-black px-2.5 py-1 rounded">
-                CV (PNG)
+                CV (PDF Document)
               </span>
             </div>
 
-            {/* Compact Thumbnail Container */}
+            {/* Compact Thumbnail Container - Embedded PDF */}
             <div 
               onClick={() => setIsPreviewOpen(true)}
-              className="bg-[#FAF8F5] border-2 border-black p-2.5 rounded-xl shadow-[3px_3px_0px_#000000] mb-5 cursor-pointer relative group overflow-hidden max-h-[200px]"
+              className="bg-[#FAF8F5] border-2 border-black p-2.5 rounded-xl shadow-[3px_3px_0px_#000000] mb-5 cursor-pointer relative group overflow-hidden max-h-[220px]"
             >
-              <img
-                src="/polaroids/cv.png"
-                alt="Debalin Sinha CV Thumbnail"
-                className="w-full h-auto rounded border border-black/30 object-top object-cover max-h-[190px] group-hover:scale-102 transition-transform duration-300"
+              <iframe
+                src="/cv/Debalin_Sinha_CV.pdf#toolbar=0&navpanes=0&scrollbar=0"
+                title="Debalin Sinha CV Preview"
+                className="w-full h-[200px] rounded border border-black/30 bg-white pointer-events-none group-hover:scale-102 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded">
                 <span className="bg-[#B5F547] border-2 border-black px-4 py-2 rounded-xl font-extrabold text-sm text-black shadow-[3px_3px_0px_#000] flex items-center gap-2">
-                  Click to Expand <Eye size={16} className="stroke-[2.5]" />
+                  Click to View PDF <Eye size={16} className="stroke-[2.5]" />
                 </span>
               </div>
             </div>
@@ -79,15 +79,15 @@ const Resume = () => {
                   onClick={() => setIsPreviewOpen(true)}
                   className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 bg-[#B5F547] hover:bg-[#A5EA36] border-2 border-black px-5 py-2.5 rounded-xl font-extrabold text-sm text-black shadow-[3px_3px_0px_#000000] brutal-btn"
                 >
-                  View Full CV <Eye size={16} className="stroke-[2.5]" />
+                  View Full PDF <Eye size={16} className="stroke-[2.5]" />
                 </button>
 
                 <a
-                  href="/polaroids/cv.png"
-                  download="Debalin_Sinha_CV.png"
+                  href="/cv/Debalin_Sinha_CV.pdf"
+                  download="Debalin_Sinha_CV.pdf"
                   className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-50 border-2 border-black px-5 py-2.5 rounded-xl font-extrabold text-sm text-black shadow-[3px_3px_0px_#000000] brutal-btn"
                 >
-                  Download CV <Download size={16} className="stroke-[2.5]" />
+                  Download PDF <Download size={16} className="stroke-[2.5]" />
                 </a>
               </div>
 
@@ -109,7 +109,7 @@ const Resume = () => {
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="bg-white border-[3px] border-black rounded-2xl p-5 sm:p-6 shadow-[10px_10px_0px_#000000] max-w-3xl w-full relative my-6"
+              className="bg-white border-[3px] border-black rounded-2xl p-5 sm:p-6 shadow-[10px_10px_0px_#000000] max-w-4xl w-full relative my-6"
             >
               {/* Close Button */}
               <button
@@ -125,28 +125,35 @@ const Resume = () => {
                   OFFICIAL CURRICULUM VITAE
                 </span>
                 <h3 className="text-xl font-black text-black mt-1">
-                  Debalin Sinha — Resume / CV
+                  Debalin Sinha — Resume / CV (PDF)
                 </h3>
               </div>
 
-              {/* Full Image Frame */}
-              <div className="bg-[#FAF8F5] border-2 border-black p-3 rounded-xl shadow-[4px_4px_0px_#000000] mb-4">
-                <img
-                  src="/polaroids/cv.png"
-                  alt="Debalin Sinha CV Document"
-                  className="w-full h-auto rounded border border-black max-h-[65vh] object-contain mx-auto"
+              {/* Full PDF Frame */}
+              <div className="bg-[#FAF8F5] border-2 border-black p-2 rounded-xl shadow-[4px_4px_0px_#000000] mb-4 h-[70vh]">
+                <iframe
+                  src="/cv/Debalin_Sinha_CV.pdf"
+                  title="Debalin Sinha CV PDF Viewer"
+                  className="w-full h-full rounded border border-black bg-white"
                 />
               </div>
 
               {/* Modal Footer */}
               <div className="flex items-center justify-between flex-wrap gap-3 pt-2 border-t-2 border-black">
                 <a
-                  href="/polaroids/cv.png"
+                  href="/cv/Debalin_Sinha_CV.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-[#B5F547] hover:bg-[#A5EA36] border-2 border-black px-5 py-2 rounded-xl font-extrabold text-sm text-black shadow-[3px_3px_0px_#000000] brutal-btn"
                 >
-                  Open Original Image <ExternalLink size={16} className="stroke-[2.5]" />
+                  Open PDF in New Tab <ExternalLink size={16} className="stroke-[2.5]" />
+                </a>
+                <a
+                  href="/cv/Debalin_Sinha_CV.pdf"
+                  download="Debalin_Sinha_CV.pdf"
+                  className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 border-2 border-black px-5 py-2 rounded-xl font-extrabold text-sm text-black shadow-[3px_3px_0px_#000000] brutal-btn"
+                >
+                  Download PDF <Download size={16} className="stroke-[2.5]" />
                 </a>
                 <button
                   onClick={() => setIsPreviewOpen(false)}

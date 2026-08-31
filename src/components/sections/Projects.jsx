@@ -5,54 +5,39 @@ import { ExternalLink, Github, X, CheckCircle, Code, Layers, Sparkles } from 'lu
 const projects = [
   {
     id: '01',
-    title: 'AI Machine Learning Pipeline & Analytics',
-    category: 'MACHINE LEARNING / PYTHON',
-    problem: 'Processing unstructured sensor & tabular data efficiently for real-time model inference required optimized feature engineering.',
-    description: 'Developed an end-to-end Machine Learning pipeline utilizing Python, Scikit-Learn, and Pandas to automate data cleaning, feature extraction, and predictive modeling with high accuracy.',
-    technologies: ['Python', 'Scikit-Learn', 'Pandas', 'NumPy', 'Matplotlib'],
-    contribution: 'Designed the feature selection logic, model comparison benchmark, and evaluation metrics visualization.',
+    title: 'Nexus QR Generator',
+    category: 'PYTHON / FLASK / HTML / CSS',
+    date: "May '25",
+    problem: 'Generating scannable, high-performance custom QR codes dynamically from URLs and text required an intuitive web app with instant preview and download options.',
+    description: 'Developed a Flask-based QR code generator for creating scannable QR codes from URLs and text. Feature normalization optimized model performance by 30% and reduced prediction error by 25%. Designed a responsive interface with QR generation and download functionality.',
+    technologies: ['Python', 'Flask', 'HTML', 'CSS'],
+    contribution: 'Engineered the Flask backend for QR code generation and feature normalization, while designing the user-responsive frontend.',
     keyFeatures: [
-      'Automated data preprocessing & missing value imputation',
-      'Multi-model evaluation (Random Forest, SVM, XGBoost)',
-      'Performance evaluation with ROC-AUC & Confusion Matrix graphs',
-      'Clean modular Python code with CLI parameter flags'
+      'Flask-based QR code generation engine for URLs and plain text',
+      'Feature normalization optimizing model performance by 30% and reducing error by 25%',
+      'Responsive interface with real-time QR rendering',
+      'Instant image download functionality for instant access'
     ],
-    githubLink: 'https://github.com/debalin-devv',
+    githubLink: 'https://github.com/debalin-devv/NexusQR',
     image: '/polaroids/ml_training.jpg'
   },
   {
     id: '02',
-    title: 'Neo-Brutalist Developer Portfolio System',
-    category: 'WEB DEVELOPMENT / REACT',
-    problem: 'Standard developer portfolio templates look generic and lack a distinctive physical art direction.',
-    description: 'Built a highly custom, pixel-accurate Neo-Brutalist editorial portfolio using React, Tailwind CSS, and Framer Motion, featuring paper textures, thick outlines, hard shadows, and Polaroid photo collages.',
-    technologies: ['React', 'JavaScript', 'Tailwind CSS', 'Framer Motion', 'Vite'],
-    contribution: 'Implemented custom CSS utility system for hard offset shadows, marquee ticker animations, and responsive layout reflow.',
+    title: 'LPU CGPA Calculator',
+    category: 'HTML / CSS / JAVASCRIPT',
+    date: "Apr '24",
+    problem: 'Students needed a quick, intuitive web tool to dynamically calculate semester grades and credit-weighted cumulative GPA accurately.',
+    description: 'Developed a web-based CGPA calculator for dynamic grade and credit-based calculations. Created a responsive UI focused on accuracy, simplicity, and ease of use.',
+    technologies: ['HTML', 'CSS', 'JavaScript'],
+    contribution: 'Built the dynamic grade computation logic, interactive form interface, and responsive brutalist styling.',
     keyFeatures: [
-      'Editorial scrapbook art direction with rotated sticker cards',
-      'Continuous horizontal technical marquee ticker',
-      'Interactive Polaroid photo collage with handwriting typography',
-      'Fully responsive, mobile-optimized drawer navigation'
+      'Dynamic grade and credit-based CGPA calculation engine',
+      'Interactive semester subject entry and real-time total score calculation',
+      'Responsive UI focused on accuracy, simplicity, and ease of use',
+      'Clean Vanilla JavaScript implementation with zero dependencies'
     ],
-    githubLink: 'https://github.com/debalin-devv',
+    githubLink: 'https://github.com/debalin-devv/CGPA-CAluculator-LPU',
     image: '/polaroids/hackathon_winner.jpg'
-  },
-  {
-    id: '03',
-    title: 'Automated File Organization & System Utility',
-    category: 'PYTHON / SYSTEM AUTOMATION',
-    problem: 'Managing cluttered download directories manually wastes developer time and leads to lost assets.',
-    description: 'Created a background Python automation utility that categorizes, renames, and archives desktop files dynamically based on file type, creation date, and metadata tags.',
-    technologies: ['Python', 'OS Module', 'Shutil', 'Pathlib', 'Argparse'],
-    contribution: 'Built the directory watcher and rule execution engine with customizable configuration files.',
-    keyFeatures: [
-      'Real-time folder monitoring with instant sorting',
-      'Custom rules engine for user-defined file extensions',
-      'Automated duplicate detection and hashing',
-      'Detailed activity logging system'
-    ],
-    githubLink: 'https://github.com/debalin-devv',
-    image: '/polaroids/team_collab.jpg'
   }
 ];
 

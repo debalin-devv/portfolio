@@ -5,30 +5,42 @@ import { GraduationCap, BookOpen, Calendar, MapPin } from 'lucide-react';
 const educationList = [
   {
     id: 1,
-    degree: 'B.Tech — Computer Science Engineering',
-    specialization: 'Specialization: Artificial Intelligence & Machine Learning',
+    degree: 'Bachelor of Technology — Computer Science & Engineering',
+    specialization: 'CGPA: 7.58',
     institution: 'Lovely Professional University',
-    duration: '2025 - 2029 (Ongoing)',
-    location: 'Punjab, India',
+    duration: "Aug '21 – Present",
+    location: 'Phagwara, Punjab',
     coursework: [
-      'Machine Learning Fundamentals',
-      'Data Structures & Algorithms',
-      'Python Programming',
-      'Database Management Systems',
-      'Object-Oriented Programming (C++)',
-      'Web Development'
+      'C++',
+      'Python',
+      'C',
+      'JavaScript',
+      'HTML / CSS',
+      'MongoDB',
+      'MS SQL Server',
+      'Data Science Essentials'
     ],
-    highlight: 'Active Focus on AI/ML Research & Engineering'
+    highlight: 'B.Tech in Computer Science and Engineering'
   },
   {
     id: 2,
-    degree: 'Higher Secondary Education (Class XII)',
-    specialization: 'Stream: Science / Mathematics',
-    institution: 'Manglamaro Mangala Academy (H.S.)',
-    duration: '2024 - 2025',
-    location: 'West Bengal, India',
-    coursework: ['Physics', 'Chemistry', 'Mathematics', 'Computer Science'],
-    highlight: 'Strong foundation in Mathematics and Computing'
+    degree: 'Intermediate (Class XII)',
+    specialization: 'Stream: PCMB | Score: 69%',
+    institution: 'M.M Academy',
+    duration: "Mar '24 – May '25",
+    location: 'Kolkata, West Bengal',
+    coursework: ['Physics', 'Chemistry', 'Mathematics', 'Biology'],
+    highlight: 'Senior secondary education with focus on science & computing'
+  },
+  {
+    id: 3,
+    degree: 'Matriculation (Class X)',
+    specialization: 'Score: 71.2%',
+    institution: 'M.M Academy',
+    duration: "Mar '22 – May '23",
+    location: 'Kolkata, West Bengal',
+    coursework: ['General Science', 'Mathematics', 'English', 'Social Studies'],
+    highlight: 'Secondary education foundation'
   }
 ];
 

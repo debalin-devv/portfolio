@@ -7,7 +7,7 @@ const achievementsList = [
     id: 1,
     title: "Hackathon Winner '25",
     category: 'AI & MACHINE LEARNING',
-    description: 'Secured 1st place in the university AI Hackathon by pitching and building an innovative AI tool prototype within 24 hours.',
+    description: 'Secured 7th place in the university AI Hackathon by pitching and building an innovative AI tool prototype within 24 hours.',
     image: '/polaroids/hackethon_prize.png',
     rotation: '-rotate-2',
     icon: Trophy,

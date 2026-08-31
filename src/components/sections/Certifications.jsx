@@ -1,16 +1,43 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Award, ExternalLink, ShieldCheck, X } from 'lucide-react';
+import { Award, ExternalLink, ShieldCheck, CheckCircle, X } from 'lucide-react';
 
 const certificationsList = [
   {
     id: 1,
-    title: 'Introduction to Cyber Security',
-    issuer: 'Infosys Springboard',
-    year: '2026',
-    credentialId: 'Infosys Springboard',
-    skills: ['Cyber Security', 'Network Security', 'Information Security', 'Data Protection'],
+    title: 'Data Science Essentials',
+    issuer: 'Cisco Networking Academy',
+    year: "May '25",
+    credentialId: 'Cisco Networking Academy',
+    skills: ['Data Science', 'Python', 'Data Analysis', 'Statistics'],
     certificateUrl: '/polaroids/data_science certificate.png'
+  },
+  {
+    id: 2,
+    title: 'Introduction to Cyber Security',
+    issuer: 'Infosys',
+    year: "Apr '25",
+    credentialId: 'Infosys',
+    skills: ['Cyber Security', 'Network Security', 'Information Security', 'Data Protection'],
+    certificateUrl: null
+  },
+  {
+    id: 3,
+    title: 'Python Certification',
+    issuer: 'HackerRank',
+    year: "Mar '24",
+    credentialId: 'HackerRank',
+    skills: ['Python', 'Data Structures', 'Algorithms', 'Problem Solving'],
+    certificateUrl: null
+  },
+  {
+    id: 4,
+    title: 'SQL Certification',
+    issuer: 'HackerRank',
+    year: "Mar '24",
+    credentialId: 'HackerRank',
+    skills: ['SQL', 'Relational Databases', 'Queries', 'MS SQL Server'],
+    certificateUrl: null
   }
 ];
 
@@ -34,7 +61,7 @@ const Certifications = () => {
         </div>
 
         {/* Certifications Grid */}
-        <div className="max-w-md">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {certificationsList.map((cert, idx) => (
             <motion.div
               key={cert.id}
@@ -78,12 +105,18 @@ const Certifications = () => {
                 </div>
               </div>
 
-              <button
-                onClick={() => setSelectedCert(cert)}
-                className="w-full inline-flex items-center justify-center gap-2 bg-[#B5F547] hover:bg-[#A5EA36] border-2 border-black py-2.5 rounded-xl font-extrabold text-sm text-black shadow-[3px_3px_0px_#000000] brutal-btn"
-              >
-                View Certificate <ExternalLink size={16} className="stroke-[2.5]" />
-              </button>
+              {cert.certificateUrl ? (
+                <button
+                  onClick={() => setSelectedCert(cert)}
+                  className="w-full inline-flex items-center justify-center gap-2 bg-[#B5F547] hover:bg-[#A5EA36] border-2 border-black py-2.5 rounded-xl font-extrabold text-sm text-black shadow-[3px_3px_0px_#000000] brutal-btn"
+                >
+                  View Certificate <ExternalLink size={16} className="stroke-[2.5]" />
+                </button>
+              ) : (
+                <div className="w-full inline-flex items-center justify-center gap-2 bg-[#FAF8F5] border border-black py-2.5 rounded-xl font-bold text-xs text-black/75 shadow-[2px_2px_0px_#000000]">
+                  <CheckCircle size={16} className="text-[#10B981] stroke-[2.5]" /> Verified Credential
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
